@@ -10,16 +10,16 @@ late final DotEnv env;
 void main(List<String> args) async {
   env = DotEnv(includePlatformEnvironment: true)..load();
 
-  withHotreload(
-    () => createServer(),
-    onReloaded: () => print('Reload!'),
-    onHotReloadNotAvailable: () => print('No hot-reload :('),
-    onHotReloadAvailable: () => print('Yay! Hot-reload :)'),
-    onHotReloadLog: (log) => print('Reload Log: ${log.message}'),
-    logLevel: Level.INFO,
-  );
+  //withHotreload(
+ //   () => createServer(),
+ //   onReloaded: () => print('Reload!'),
+ //   onHotReloadNotAvailable: () => print('No hot-reload :('),
+ //   onHotReloadAvailable: () => print('Yay! Hot-reload :)'),
+//    onHotReloadLog: (log) => print('Reload Log: ${log.message}'),
+//    logLevel: Level.INFO,
+//  );
 
-  // await createServer();
+   await createServer();
 }
 
 Future<HttpServer> createServer() async {
